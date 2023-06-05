@@ -9,6 +9,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './home-page/home-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 // import { AppRoutingModule } from './app-routing.module';
 
@@ -17,7 +18,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule
