@@ -1,5 +1,3 @@
-#app {
-    min-height: 100vh;
-    min-width: 100vw;
-    background-color: #26266d;
-  }
+#login-container{
+  margin-top: 30px;
+}
