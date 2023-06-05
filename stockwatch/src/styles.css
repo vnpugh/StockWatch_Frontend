@@ -7,3 +7,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+#login-container{
+    margin-top: 20px;
+   
+}
+.logo{
+    height: 11rem;
+}
