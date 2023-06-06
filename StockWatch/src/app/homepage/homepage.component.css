@@ -1,9 +1,15 @@
 .logo-image {
     max-height: 7rem; 
     max-width: 100%; 
-    margin-left: 5rem;
+    margin-left: 4rem;
 
   }
+  .btn {
+    border-color: green;
+     margin-left: 0.5rem;
+    color: green;
+  }
+  
   .submenu {
     display: none;
   }
@@ -14,5 +20,6 @@
   .btn-sm {
     color: red;
   }
-  
+
+
   

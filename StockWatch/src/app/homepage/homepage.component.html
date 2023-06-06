@@ -1,17 +1,16 @@
-<!-- <p>homepage works!</p> -->
 <div class="navbar bg-base-100">
-    <div class="flex-1">
-      <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
-    </div>
-    <div class="flex-none gap-2">
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
-    <div class="flex-none">
+    <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
+    <div class="navbar-nav flex-1">
+        <form class="form-inline d-flex">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success btn-m my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+
+  
+    <div class="navbar-nav flex-none">
       <ul class="menu menu-horizontal px-1">
         <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/">Learn</a></li>
-        <li><a routerLink="/">Planning</a></li>
         <li>
           <details>
             <summary>
@@ -28,6 +27,9 @@
       </ul>
     </div>
   </div>
+  
+
+
   
   <!-- New Message -->
   <div class="alert shadow-lg">
