@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { WatchlistsComponent } from './watchlists/watchlists.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    WatchlistsComponent
+    WatchlistsComponent,
+    LoginComponent
     
   ],
   imports: [
