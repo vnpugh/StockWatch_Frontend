@@ -1,1 +1,0 @@
-# StockWatch_Frontend
