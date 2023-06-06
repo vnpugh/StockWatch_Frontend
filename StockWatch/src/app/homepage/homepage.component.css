@@ -28,5 +28,22 @@
     font-weight: bolder;
     font-size: 28px;
 }
+.card-title{
+    font-size: 18px;
+}
+
+#news_date{
+   margin-top: 1rem;
+}
+.news{
+    font-size: 13.5px;
+    font-weight: bolder;
+}
+.news_link{
+    font-size: 13.5px;
+}
+.news_img{
+
+}
 
   
