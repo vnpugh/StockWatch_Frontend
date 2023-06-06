@@ -1,9 +1,9 @@
 .login-form {
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 45px;
     background-color: #f4f4f4;
-    border-radius: 5px;
+    border-radius: 4rem;
   }
   
   .login-form h2 {
@@ -24,8 +24,8 @@
   .form-group input[type="password"] {
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border-radius: 6px;
+    border: 2px solid #000000;
   }
   
   .error-message {
@@ -36,7 +36,7 @@
   
   button[type="submit"] {
     display: block;
-    width: 100%;
+    width: 50%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
@@ -46,12 +46,25 @@
   }
   
   button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: green;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    flex: 1;
+    margin-right: 10px;
   }
   
     
 
-
+  .password-reset {
+    margin-top: 10px;
+  }
+  
 
 
 
