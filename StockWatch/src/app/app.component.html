@@ -1,36 +1,35 @@
-<div class="drawer">
-    <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
-    <div class="drawer-content flex flex-col">
-      <!-- Navbar -->
-      <div class="w-full navbar bg-base-300">
-        <div class="flex-none lg:hidden">
-          <label for="my-drawer-3" class="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </label>
-        </div> 
-        <div class="flex-1 px-2 mx-2">
-          <a routerLink="/">
-            <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
-            <!-- Stock Watch -->
-          </a>
-        </div>
-        <div class="flex-none hidden lg:block">
-          <ul class="menu menu-horizontal">
-            <!-- Navbar menu content  -->
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/watchlist">WatchLists</a></li>
-          </ul>
-        </div>
-      </div>
-    </div> 
-    <div class="drawer-side">
-      <label for="my-drawer-3" class="drawer-overlay"></label> 
-      <ul class="menu p-4 w-80 h-full bg-base-200">
-        <!-- Sidebar content  -->
-        <li><a>Sidebar Item 1</a></li>
-        <li><a>Sidebar Item 2</a></li>  
-      </ul>
-    </div>
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
   </div>
-  <router-outlet></router-outlet>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/">Home</a></li>
+      <li>
+        <details>
+          <summary>
+            Watchlists
+          </summary>
+          <ul class="p-2 bg-base-100">
+            <li><a routerLink="/watchlist">Watchlist 1</a></li>
+            <li><a routerLink="/watchlist">Watchlist 2</a></li>
+            <li><a routerLink="/watchlist">Watchlist 3</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
   

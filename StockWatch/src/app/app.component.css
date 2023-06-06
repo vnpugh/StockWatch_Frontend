@@ -3,4 +3,12 @@
     max-width: 100%; 
 
   }
+  .submenu {
+    display: none;
+  }
+  
+  .submenu.show {
+    display: block;
+  }
+  
   
