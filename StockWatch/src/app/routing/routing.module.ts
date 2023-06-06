@@ -7,7 +7,7 @@ import { WatchlistsComponent } from '../watchlists/watchlists.component';
 // https://angular.io/guide/router#displaying-a-404-page
 // Documentation for using router
 const routes: Routes = [
-    { path: '**', component: HomepageComponent },
+    { path: 'home', component: HomepageComponent },
     { path: 'watchlists', component: WatchlistsComponent },
     { path: 'watchlists/watchlist1', component: WatchlistsComponent },
     { path: 'watchlists/watchlist2', component: WatchlistsComponent },
