@@ -2,6 +2,10 @@
   <div class="flex-1">
     <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
   </div>
+  <div class="flex-none gap-2">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
       <li><a routerLink="/">Home</a></li>
@@ -19,10 +23,12 @@
           </ul>
         </details>
       </li>
+      <li><a routerLink="/">Logout</a></li>
     </ul>
   </div>
 </div>
 
+<!-- New Message -->
 <div class="alert shadow-lg">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
   <div>
