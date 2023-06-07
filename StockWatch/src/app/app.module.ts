@@ -3,11 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { RoutingModule } from './routing/routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { WatchlistsComponent } from './watchlists/watchlists.component';
 import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     HomepageComponent,
     WatchlistsComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
     
   ],
   imports: [
@@ -24,9 +27,10 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomepageComponent }
-    ])
+    ]),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
