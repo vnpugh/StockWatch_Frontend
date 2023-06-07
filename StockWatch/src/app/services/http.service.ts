@@ -56,4 +56,4 @@ export class HttpService {
     }
     return httpOptions;
   }
-}
+
