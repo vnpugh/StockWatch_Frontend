@@ -8,7 +8,7 @@ describe('WatchlistsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WatchlistsComponent]
+      declarations: [WatchlistsComponent],
     });
     fixture = TestBed.createComponent(WatchlistsComponent);
     component = fixture.componentInstance;

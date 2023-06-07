@@ -1,35 +1,32 @@
 <div class="navbar bg-base-100">
-    <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
-    <div class="navbar-nav flex-1">
-        <form class="form-inline d-flex">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success btn-m my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    <div class="navbar-nav flex-none">
-      <ul class="menu menu-horizontal px-1">
-        <li><a routerLink="/">Home</a></li>
-        <li>
-          <details>
-            <summary>
-              Watchlists
-            </summary>
-            <ul class="p-2 bg-base-100">
-              <li><a routerLink="/watchlist">Watchlist 1</a></li>
-              <li><a routerLink="/watchlist">Watchlist 2</a></li>
-              <li><a routerLink="/watchlist">Watchlist 3</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a routerLink="/">Logout</a></li>
-      </ul>
-    </div>
+  <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
+  <div class="navbar-nav flex-1">
+    <form class="form-inline d-flex">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success btn-m my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
   </div>
-  
-
-
-
-
-  
-  
-  
+  <div class="navbar-nav flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a routerLink="/">Home</a></li>
+      <li>
+        <details>
+          <summary>Watchlists</summary>
+          <ul class="p-2 bg-base-100">
+            <li><a routerLink="/watchlist">Watchlist 1</a></li>
+            <li><a routerLink="/watchlist">Watchlist 2</a></li>
+            <li><a routerLink="/watchlist">Watchlist 3</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a routerLink="/">Logout</a></li>
+    </ul>
+  </div>
+</div>
