@@ -11,6 +11,7 @@ import { WatchlistsComponent } from './watchlists/watchlists.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,15 +19,20 @@ import { RegistrationComponent } from './registration/registration.component';
     WatchlistsComponent,
     LoginComponent,
     RegistrationComponent,
+
   ],
   imports: [
     RoutingModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([{ path: '', component: HomepageComponent }]),
+
+    RouterModule.forRoot([ { path: '', component: HomepageComponent }]),
     HttpClientModule,
   ],
+
   providers: [HttpClientModule],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+
+export class AppModule { }
+

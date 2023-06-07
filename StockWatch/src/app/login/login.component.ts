@@ -1,8 +1,12 @@
 import { LoginResponse } from './../models/login.response';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { LoginResponse } from '../models/login.response';
 import { Login } from '../models/login';
 import { HttpService } from '../services/http.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -13,6 +17,7 @@ export class LoginComponent {
   email!: string;
   password!: string;
   errorMessage!: string;
+
 
   constructor(private router: Router, private httpClient: HttpService) {}
   login(): void {
@@ -30,5 +35,7 @@ export class LoginComponent {
         this.errorMessage = e.error?.message? e.error?.message: 'Invalid email or password';
       },
     });
-  }
+
+  } 
+
 }

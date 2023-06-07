@@ -1,3 +1,4 @@
+
 import { LoginResponse } from '../models/login.response';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -43,4 +44,4 @@ export class RegistrationComponent {
         },
       });
   }
-}
+
