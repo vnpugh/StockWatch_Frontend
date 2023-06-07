@@ -29,7 +29,7 @@ export class HttpService {
     requestBody?: any,
     requestParams?: any
   ): Observable<any> {
-    let httpOptions = this.setRequestHeaders();
+    let httpOptions = this.setRequestHeaders(requestParams);
     return this.httpClient.put(
       this.hostname + apiUrl,
       requestBody,
@@ -38,21 +38,20 @@ export class HttpService {
   }
 
   public delete(apiUrl: string, requestParams?: any): Observable<any> {
-    let httpOptions = this.setRequestHeaders();
+    let httpOptions = this.setRequestHeaders(requestParams);
     return this.httpClient.delete(this.hostname + apiUrl, httpOptions);
   }
 
   private setRequestHeaders(httpParams?: any): any {
     let httpHeaders = new HttpHeaders();
-    httpHeaders = httpHeaders.set('Content-Type', 'application/json');
-    httpHeaders = httpHeaders.set('Access-Control-Allow-Origin', '*');
-    httpHeaders = httpHeaders.set(
-      'Authorization',
-      `${'Bearer '}${localStorage.getItem('jwt')}`
+    httpHeaders = httpHeaders.append('Content-Type', 'application/json');
+    httpHeaders = httpHeaders.append('Access-Control-Allow-Origin', '*');
+    httpHeaders = httpHeaders.append(
+      'Authorization', `${'Bearer '}${localStorage.getItem('jwt')}`
     );
-    let httpOptions = { headers: httpHeaders };
+    let httpOptions = { headers: httpHeaders};
     if (httpParams) {
-      Object.assign(httpOptions, { params: httpParams });
+      httpOptions = Object.assign(httpOptions, { params: httpParams });
     }
     return httpOptions;
   }
