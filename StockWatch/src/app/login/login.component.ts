@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginResponse } from '../models/login.response';
+import { Login } from '../models/login';
+import { HttpService } from '../services/http.service';
+
 
 @Component({
   selector: 'app-login',
@@ -12,19 +16,21 @@ export class LoginComponent {
   errorMessage!: string;
 
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private httpClient: HttpService) {}
   login(): void {
-    // Perform validation
-    if (this.email === 'email100@gmail.com' && this.password === 'password100') {
+    let login: Login = { email: this.email, password: this.password };
 
-      this.errorMessage = '';
-
-      // Navigate to the desired page after successful login
-      this.router.navigate(['/home']);
-    } else {
-      // Show error message for invalid credentials
-      this.errorMessage = 'Invalid email or password';
-    }
-  }
-
+    this.httpClient.post('api/auth/users/login', login).subscribe({
+      next: (res: LoginResponse) => {
+        localStorage.setItem('jwt', res.accessToken);
+        this.errorMessage = '';
+        // Navigate to the desired page after successful login
+        this.router.navigate(['/home']);
+      },
+      error: (e) => {
+        // Show error message for invalid credentials
+        this.errorMessage = e.error?.message? e.error?.message: 'Invalid email or password';
+      },
+    });
+  } 
 }
