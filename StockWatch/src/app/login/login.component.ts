@@ -27,7 +27,7 @@ export class LoginComponent {
       },
       error: (e) => {
         // Show error message for invalid credentials
-        this.errorMessage = 'Invalid email or password';
+        this.errorMessage = e.error?.message? e.error?.message: 'Invalid email or password';
       },
     });
   }
