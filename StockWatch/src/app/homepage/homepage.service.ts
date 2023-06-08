@@ -6,10 +6,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class HomepageService {
 
+/**
+* Using BehaviorSubject observable to handle the message logic (for new subscribers).
+* Important because the BehaviorSubject stores the latest value.
+*/ 
   public subject = new BehaviorSubject('');
   constructor() { }
 
-  updateChild() {
+  updateChild() { //when called, sends an empty message
     return this.subject.next('');
   }
 }

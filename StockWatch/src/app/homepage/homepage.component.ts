@@ -19,6 +19,7 @@ export class HomepageComponent {
   constructor(private httpClient: HttpService, private router: Router, private homePageService: HomepageService) {
   }
 
+  // click event listener added to retrieve the elements by name & Id 
   ngOnInit() {
     document.getElementsByClassName("ul")[0]?.addEventListener('click', (e)=> {
       document.getElementById("details")?.removeAttribute("open")
@@ -26,6 +27,7 @@ export class HomepageComponent {
     this.fetchWatchlists();
   }
 
+  // retrieves watchlist data from the API
   fetchWatchlists(): void {
     this.httpClient.get('api/watchlist').subscribe({
       next: (res: WatchListResponse[]) => {
@@ -38,7 +40,7 @@ export class HomepageComponent {
 
   }
 
-  searchStocks() {
+  searchStocks() { // initiates the stock search from the homepagecomponent
     this.homePageService.subject.next(this.searchQuery);
   }
 

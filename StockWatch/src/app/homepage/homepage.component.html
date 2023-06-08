@@ -1,3 +1,6 @@
+
+<!-- * Navbar layout -->
+
 <div class="navbar bg-base-100">
   <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
   <div class="navbar-nav flex-1">
@@ -20,14 +23,15 @@
     <ul class="menu menu-horizontal px-1">
       <li><a routerLink="/home">Home</a></li>
       <li>
-        <details id="details">
+       <details id="details">   <!--collapsable section -->
           <summary>Watchlists</summary>
-          <ul class="bg-base-100 ul" style="z-index: 10;">
-            <li id="li" *ngFor="let wl of watchlists"><a [routerLink]="['watchlist/:watchlistId', {watchlistId: wl.listId, listName: wl.listName}]">{{wl.listName}}</a></li>
+          <ul class="bg-base-100 ul" style="z-index: 10;"> <!--ngFor directive iterates over watchlist array -->
+            <li id="li" *ngFor="let wl of watchlists"><a [routerLink]="['watchlist/:watchlistId', 
+              {watchlistId: wl.listId, listName: wl.listName}]">{{wl.listName}}</a></li>
           </ul>
         </details>
       </li>
-      <li><a routerLink="/">Logout</a></li>
+     <li><a routerLink="/">Logout</a></li>   <!--routing for the application -->
     </ul>
   </div>
 </div>

@@ -1,3 +1,9 @@
+
+<!-- /**
+* Using an Angular template is the most efficient way to view the stock data on the frontend.
+* Documentation: https://material.angular.io/guide/getting-started
+*/  -->
+
 <button mat-flat-button [disabled]="!selection.hasValue()" color="primary" class="btn-mat" (click)="addToWatchList()">Add to Watchlist</button>
 <button mat-flat-button [disabled]="!selection.hasValue()" color="primary" class="btn-mat" (click)="createWatchList()">Create Watchlist</button>
 <table mat-table [dataSource]="dataSource">
@@ -17,34 +23,37 @@
       </mat-checkbox>
     </td>
   </ng-container>
-  <!-- Position Column -->
+  <!-- Company Column -->
   <ng-container matColumnDef="company">
     <th mat-header-cell *matHeaderCellDef> Company </th>
     <td mat-cell *matCellDef="let element"> {{element.company}} </td>
   </ng-container>
 
-  <!-- Name Column -->
+  <!-- Symbol Column -->
   <ng-container matColumnDef="symbol">
     <th mat-header-cell *matHeaderCellDef> Symbol </th>
     <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- Price Column -->
   <ng-container matColumnDef="price">
     <th mat-header-cell *matHeaderCellDef> Price </th>
     <td mat-cell *matCellDef="let element"> {{element.price}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- Stock Change Column -->
   <ng-container matColumnDef="stockChange">
     <th mat-header-cell *matHeaderCellDef> Stock Change </th>
     <td mat-cell *matCellDef="let element"> {{element.stockChange}} </td>
   </ng-container>
 
+  <!-- Wall Street Rating Column -->
   <ng-container matColumnDef="wallStreetRating">
     <th mat-header-cell *matHeaderCellDef> Wall Street Rating </th>
     <td mat-cell *matCellDef="let element"> {{element.wallStreetRating}} </td>
   </ng-container>
+
+    <!-- Market Cap Column -->
   <ng-container matColumnDef="marketCap">
     <th mat-header-cell *matHeaderCellDef> Market Cap </th>
     <td mat-cell *matCellDef="let element"> {{element.marketCap}} </td>
