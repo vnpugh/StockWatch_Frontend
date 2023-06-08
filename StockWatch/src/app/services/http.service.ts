@@ -10,8 +10,8 @@ export class HttpService {
   hostname = 'http://localhost:8080/';
   constructor(private httpClient: HttpClient) {}
 
-  public get(apiUrl: string): Observable<any> {
-    let httpOptions = this.setRequestHeaders();
+  public get(apiUrl: string, requestParams?: any): Observable<any> {
+    let httpOptions = this.setRequestHeaders(requestParams);
     return this.httpClient.get(this.hostname + apiUrl, httpOptions);
   }
 
@@ -55,4 +55,4 @@ export class HttpService {
     }
     return httpOptions;
   }
-
+}

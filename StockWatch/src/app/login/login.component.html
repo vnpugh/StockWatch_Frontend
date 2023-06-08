@@ -1,3 +1,4 @@
+<div class="backgroud-img">
 <div class="login-form">
   <h2>Login</h2>
   <form (ngSubmit)="login()">
@@ -18,10 +19,7 @@
     <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
     <div class="button-container">
       <button type="submit">Login</button>
-      <button type="submit">Register</button>
-    </div>
-    <div class="password-reset">
-      <a href="#">Forgot Password? Reset Here</a>
     </div>
   </form>
+</div>
 </div>

@@ -16,14 +16,12 @@
 
   <div class="navbar-nav flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/home">Home</a></li>
       <li>
         <details>
           <summary>Watchlists</summary>
-          <ul class="p-2 bg-base-100">
-            <li><a routerLink="/watchlist">Watchlist 1</a></li>
-            <li><a routerLink="/watchlist">Watchlist 2</a></li>
-            <li><a routerLink="/watchlist">Watchlist 3</a></li>
+          <ul class="p-2 bg-base-100" style="z-index: 10;">
+            <li *ngFor="let wl of watchlists"><a [routerLink]="['watchlist', wl.listId]">{{wl.listName}}</a></li>
           </ul>
         </details>
       </li>
@@ -31,4 +29,5 @@
     </ul>
   </div>
 </div>
+<router-outlet></router-outlet>
 

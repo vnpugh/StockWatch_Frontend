@@ -1,3 +1,5 @@
+<button mat-flat-button [disabled]="!selection.hasValue()" color="primary" class="btn-mat" (click)="addToWatchList()">Add to Watchlist</button>
+<button mat-flat-button [disabled]="!selection.hasValue()" color="primary" class="btn-mat" (click)="createWatchList()">Create Watchlist</button>
 <table mat-table [dataSource]="dataSource">
   <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>

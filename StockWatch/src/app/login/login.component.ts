@@ -1,8 +1,6 @@
 import { LoginResponse } from './../models/login.response';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { LoginResponse } from '../models/login.response';
 import { Login } from '../models/login';
 import { HttpService } from '../services/http.service';
 
@@ -36,6 +34,6 @@ export class LoginComponent {
       },
     });
 
-  } 
+  }
 
 }
