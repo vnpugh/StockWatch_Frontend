@@ -16,17 +16,24 @@ export class CreateWatchlistComponent {
   description:string = ''
   error:string = ''
   constructor(
-    public dialogRef: MatDialogRef<HomeGridComponent>,
+    public dialogRef: MatDialogRef<HomeGridComponent>, //dialog window that can be closed
     @Inject(MAT_DIALOG_DATA) public data: Stock[], private httpService: HttpService
   ) {}
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(); // user can click on the dialog's close button
   }
+
+   /**
+* createWatchlist method first checks if the listname is empty. Throws an error of the
+  watchlist name is empty.
+* If the listname is not empty, then the stockId is created in the array. 
+* Next, the createWatchlistReq is created with the listname, description & stockId.
+*/
 
   createWatchlist(): void {
     if(this.listName == null || this.listName == '') {
-      this.error = 'Please input watchlist name';
+      this.error = 'Please enter watchlist name';
       return;
     }
     let stockIds = this.data?.map(stock=>stock.stockId)
