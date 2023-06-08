@@ -11,7 +11,10 @@ import { HttpService } from '../services/http.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+
+// user must enter a unique email and password to login
+
+export class LoginComponent { 
   email!: string;
   password!: string;
   errorMessage!: string;
@@ -23,9 +26,10 @@ export class LoginComponent {
 
     this.httpClient.post('api/auth/users/login', login).subscribe({
       next: (res: LoginResponse) => {
-        localStorage.setItem('jwt', res.accessToken);
+        // access key is saved in the browser's storage
+        localStorage.setItem('jwt', res.accessToken); 
         this.errorMessage = '';
-        // Navigate to the desired page after successful login
+        // Navigate to the homepage after successful login
         this.router.navigate(['/home']);
       },
       error: (e) => {

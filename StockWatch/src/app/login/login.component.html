@@ -1,11 +1,14 @@
+
+ <!-- User login box -->
 <div class="backgroud-img">
 <div class="login-form">
   <h2>Login</h2>
   <form (ngSubmit)="login()">
     <div class="form-group">
-      <label for="email">Email</label>
+    <label for="email">Email</label>      <!-- enables two-way data binding -->
+                                          <!--binding the value of the input element to the email property. -->
       <input type="text" id="email" name="email" [(ngModel)]="email" required />
-    </div>
+    </div>                   
     <div class="form-group">
       <label for="password">Password</label>
       <input
