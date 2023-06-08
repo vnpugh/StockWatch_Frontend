@@ -5,7 +5,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../services/http.service';
 import { Stock } from '../models/stock';
-import { SelectionModel } from '@angular/cdk/collections';
+import { SelectionModel } from '@angular/cdk/collections'; //used to manage tables & lists
 import { AddToWatchlist } from '../models/add-to-watchlist.request';
 import { CreateWatchlistResponse } from '../models/create-watchlist.response';
 
@@ -15,7 +15,8 @@ import { CreateWatchlistResponse } from '../models/create-watchlist.response';
   styleUrls: ['./watchlists.component.css'],
 })
 export class WatchlistsComponent {
-  displayedColumns: string[] = ['select', 'company', 'symbol', 'price', 'stockChange', 'wallStreetRating', 'marketCap'];
+  displayedColumns: string[] = ['select', 'company', 'symbol', 'price', 
+  'stockChange', 'wallStreetRating', 'marketCap'];
   dataSource:any;
   selection = new SelectionModel<Stock>(true, []);
   listName:any;
@@ -68,10 +69,17 @@ export class WatchlistsComponent {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.stockId + 1}`;
   }
 
+  /**
+ * Deletes selected stocks from the watchlist.
+ * Retrieve the stock symbols of the selected stocks.
+ */
+
   deleteStocks() {
     let stockSymbols = this.selection.selected?.map(stock=>stock.symbol)
     let deleteWatchlistReq: AddToWatchlist = {watchListId: this.watchlistId, stockSymbols: stockSymbols};
+      // Send the HTTP request to delete stocks from the watchlist
     this.httpClient.post('api/watchlist/deleteStocks', deleteWatchlistReq).subscribe({
+       // Display success message and the grid will be refreshed
       next: (res: CreateWatchlistResponse) => {
         this.snackBar.open("Stocks deleted from Watchlist successfully", undefined, {duration: 2000});
         this.populateGrid(this.watchlistId);
@@ -82,6 +90,10 @@ export class WatchlistsComponent {
     });
   }
 
+  /**
+ * Search for stocks based on the given query and the grid will be updated with the results.
+ * @param query The search query to filter stocks by company name or symbol.
+ */
   searchStocks(query: string) {
     this.httpClient.get('api/stocks/companyOrSymbol', {query: query, watchlist_id: this.watchlistId}).subscribe({
       next: (res: Stock[]) => {

@@ -4,7 +4,7 @@ import { HomepageComponent } from '../homepage/homepage.component';
 import { LoginComponent } from '../login/login.component';
 import { WatchlistsComponent } from '../watchlists/watchlists.component';
 import { RegistrationComponent } from '../registration/registration.component';
-import { HomeGridComponent } from '../homepage grid/home.grid.component';
+import { HomeGridComponent } from '../homepage grid/home.grid.component'; //custom component
 
 // https://angular.io/guide/router#displaying-a-404-page
 // Documentation for using router
@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 ];
 
-@NgModule({
+// the router should reload the component when navigating to the same URL
+@NgModule({ 
   imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule],
 })
