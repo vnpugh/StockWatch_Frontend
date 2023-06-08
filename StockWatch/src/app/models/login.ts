@@ -4,3 +4,5 @@ export interface Login {
   password: string;
 }
 
+//handles the structure of the data relating to the log-in process
+

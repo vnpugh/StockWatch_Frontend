@@ -1,6 +1,8 @@
 import { RegisterResponse } from "./register.response"
 import { Stock } from "./stock"
 
+// This interface is needed to receive the watchlist data after it is created.
+// handles the response data correctly
 export interface CreateWatchlistResponse {
   watchListId: number
   listName: string
@@ -9,3 +11,4 @@ export interface CreateWatchlistResponse {
   user: RegisterResponse
   stocks: Stock[]
 }
+

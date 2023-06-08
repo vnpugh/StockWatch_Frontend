@@ -5,3 +5,5 @@ export interface RegisterResponse {
   id: number;
 }
 
+// handles the response data related to user registration
+
