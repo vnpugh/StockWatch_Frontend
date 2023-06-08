@@ -21,7 +21,6 @@ export class CreateWatchlistComponent {
   ) {}
 
   onNoClick(): void {
-    console.log(this.data)
     this.dialogRef.close();
   }
 

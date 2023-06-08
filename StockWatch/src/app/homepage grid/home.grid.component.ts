@@ -7,6 +7,7 @@ import { Stock } from '../models/stock';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateWatchlistComponent } from '../dialog/create-watchlist/create-watchlist.component';
+import { AddtoWatchlistComponent } from '../dialog/addto-watchlist/addto-watchlist.component';
 
 @Component({
   selector: 'app-homegrid',
@@ -28,17 +29,13 @@ export class HomeGridComponent {
     this.populateGrid();
   }
 
-  ngOnChanges() {
-console.log("aasa")
-  }
-
   populateGrid() {
     this.httpClient.get('api/stocks').subscribe({
       next: (res: Stock[]) => {
         this.dataSource = new MatTableDataSource<Stock>(res);
       },
       error: (e) => {
-        console.log("Error while fetching stocks");
+        this.snackBar.open("Error while fetching stocks", undefined, {duration: 2000});
       },
     });
   }
@@ -81,8 +78,7 @@ console.log("aasa")
       if(result == 'success') {
         this.selection.clear()
         this.snackBar.open("Watchlist Created successfully", undefined, {duration: 2000});
-        this.ref.detectChanges()
-        this.r.navigateByUrl("/home");
+        location.reload()
       } else if (result) {
         this.snackBar.open(result, undefined, {duration: 2000});
       }
@@ -90,6 +86,18 @@ console.log("aasa")
   }
 
   addToWatchList() {
-    console.log('gj')
+    const dialogRef = this.dialog.open(AddtoWatchlistComponent, {
+      data: this.selection.selected,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == 'success') {
+        this.selection.clear()
+        this.snackBar.open("Stocks added to Watchlist successfully", undefined, {duration: 2000});
+        location.reload()
+      } else if (result) {
+        this.snackBar.open(result, undefined, {duration: 2000});
+      }
+    });
   }
 }
