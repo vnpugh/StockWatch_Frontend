@@ -1,6 +1,7 @@
 export interface Register {
-    email: string;
-    password: string;
-    firstName: string;
-  }
-  
+
+  email: string;
+  password: string;
+  firstName: string;
+}
+

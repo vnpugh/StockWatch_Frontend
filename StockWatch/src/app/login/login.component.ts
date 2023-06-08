@@ -1,14 +1,15 @@
+import { LoginResponse } from './../models/login.response';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginResponse } from '../models/login.response';
 import { Login } from '../models/login';
 import { HttpService } from '../services/http.service';
+
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   email!: string;
@@ -32,5 +33,7 @@ export class LoginComponent {
         this.errorMessage = e.error?.message? e.error?.message: 'Invalid email or password';
       },
     });
-  } 
+
+  }
+
 }

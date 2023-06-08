@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomepageComponent } from './homepage.component';
+import { HomeGridComponent } from './home.grid.component';
 
-describe('HomepageComponent', () => {
-  let component: HomepageComponent;
-  let fixture: ComponentFixture<HomepageComponent>;
+describe('HomeGridComponent', () => {
+  let component: HomeGridComponent;
+  let fixture: ComponentFixture<HomeGridComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomepageComponent],
+      declarations: [HomeGridComponent],
     });
-    fixture = TestBed.createComponent(HomepageComponent);
+    fixture = TestBed.createComponent(HomeGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

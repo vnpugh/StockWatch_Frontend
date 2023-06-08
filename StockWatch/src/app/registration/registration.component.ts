@@ -19,7 +19,7 @@ export class RegistrationComponent {
   name!: string;
 
   constructor(private router: Router, private httpClient: HttpService) {}
-  login(): void {
+  register(): void {
     let registrationRequest: Register = {
       email: this.email,
       password: this.password,
@@ -45,3 +45,4 @@ export class RegistrationComponent {
       });
   }
 }
+

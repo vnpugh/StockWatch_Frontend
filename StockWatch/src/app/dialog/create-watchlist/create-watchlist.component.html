@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Create Watchlist</h1>
+<div mat-dialog-content>
+  <div>
+  <mat-form-field>
+    <mat-label>List Name</mat-label>
+    <input matInput [(ngModel)]="listName">
+  </mat-form-field>
+</div>
+<p style="color: red;font-size: 12px;">{{error}}</p>
+<div>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput [(ngModel)]="description">
+  </mat-form-field>
+</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="createWatchlist()" cdkFocusInitial>Save</button>
+</div>
