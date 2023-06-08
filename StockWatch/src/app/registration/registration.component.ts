@@ -18,7 +18,18 @@ export class RegistrationComponent {
   errorMessage!: string;
   name!: string;
 
+  /**
+ * Represents the registration component.
+ * Handles user registration functionality.
+ */
+
   constructor(private router: Router, private httpClient: HttpService) {}
+
+  /**
+ * Performs user registration.
+ * Sends a registration request to the server.
+ */
+
   register(): void {
     let registrationRequest: Register = {
       email: this.email,
@@ -33,6 +44,13 @@ export class RegistrationComponent {
     this.httpClient
       .post('api/auth/users/register', registrationRequest)
       .subscribe({
+
+          /**
+     * Handles the next response from the registration request.
+     * Called when the registration is successful.
+     * @param res The response object containing registration details.
+     */
+    
         next: (res: RegisterResponse) => {
           this.errorMessage = '';
           // Navigate to the desired page after successful registration.

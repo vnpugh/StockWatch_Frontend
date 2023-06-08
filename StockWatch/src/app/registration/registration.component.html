@@ -1,4 +1,6 @@
 
+<!-- Using pattern to set a pattern that the email address mmust match (validation) -->
+
 <div class="backgroud-img">
 <div class="login-form">
   <h2>Register</h2>
@@ -13,7 +15,7 @@
         type="email"
         id="email"
         name="email"
-        [(ngModel)]="email"
+        [(ngModel)]="email" 
         required
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
       />
