@@ -17,6 +17,9 @@ export class HomepageComponent {
   }
 
   ngOnInit() {
+    document.getElementsByClassName("ul")[0]?.addEventListener('click', (e)=> {
+      document.getElementById("details")?.removeAttribute("open")
+    })
     this.fetchWatchlists();
   }
 

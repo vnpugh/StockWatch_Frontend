@@ -18,10 +18,10 @@
     <ul class="menu menu-horizontal px-1">
       <li><a routerLink="/home">Home</a></li>
       <li>
-        <details>
+        <details id="details">
           <summary>Watchlists</summary>
-          <ul class="p-2 bg-base-100" style="z-index: 10;">
-            <li *ngFor="let wl of watchlists"><a [routerLink]="['watchlist', wl.listId]">{{wl.listName}}</a></li>
+          <ul class="bg-base-100 ul" style="z-index: 10;">
+            <li id="li" *ngFor="let wl of watchlists"><a [routerLink]="['watchlist', wl.listId]">{{wl.listName}}</a></li>
           </ul>
         </details>
       </li>
