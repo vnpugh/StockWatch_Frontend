@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { WatchListResponse } from '../models/watchlist.response';
+import { NavigationEnd, Router } from '@angular/router';
+import { Stock } from '../models/stock';
+import { HomepageService } from './homepage.service';
 
 @Component({
   selector: 'app-homepage',
@@ -11,9 +14,9 @@ import { WatchListResponse } from '../models/watchlist.response';
 export class HomepageComponent {
 
   watchlists:WatchListResponse[] = [];
-
-  constructor(private httpClient: HttpService) {
-
+  selectedWatchlistId:any;
+  searchQuery:any = '';
+  constructor(private httpClient: HttpService, private router: Router, private homePageService: HomepageService) {
   }
 
   ngOnInit() {
@@ -33,6 +36,10 @@ export class HomepageComponent {
       },
     });
 
+  }
+
+  searchStocks() {
+    this.homePageService.subject.next(this.searchQuery);
   }
 
 }

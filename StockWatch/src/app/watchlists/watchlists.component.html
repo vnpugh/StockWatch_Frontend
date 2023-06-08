@@ -1,3 +1,4 @@
+<h2>{{listName}}</h2>
 <button mat-flat-button [disabled]="!selection.hasValue()" color="primary" class="btn-mat" (click)="deleteStocks()">Delete Stocks</button>
 <table mat-table [dataSource]="dataSource">
   <ng-container matColumnDef="select">

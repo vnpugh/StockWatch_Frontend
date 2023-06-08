@@ -1,3 +1,4 @@
+import { HomepageService } from './../homepage/homepage.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
@@ -20,11 +21,15 @@ export class WatchlistsComponent {
   listName:any;
   watchlistId:any;
 
-  constructor(private route: ActivatedRoute, private httpClient: HttpService, private snackBar: MatSnackBar) {
+  constructor(private route: ActivatedRoute, private httpClient: HttpService, private snackBar: MatSnackBar, private homepageService: HomepageService) {
     this.route.params.subscribe(params => {
       this.populateGrid(params['watchlistId'])
       this.watchlistId = params['watchlistId'];
+      this.listName = params['listName'];
     });
+    this.homepageService.subject.subscribe(query=> {
+      this.searchStocks(query);
+    })
   }
 
   populateGrid(watchlistId: number) {
@@ -73,6 +78,17 @@ export class WatchlistsComponent {
       },
       error: (e) => {
         this.snackBar.open(e.error?.message? e.error?.message: "Error occured while deleting stocks", undefined, {duration: 2000});
+      },
+    });
+  }
+
+  searchStocks(query: string) {
+    this.httpClient.get('api/stocks/companyOrSymbol', {query: query, watchlist_id: this.watchlistId}).subscribe({
+      next: (res: Stock[]) => {
+        this.dataSource = new MatTableDataSource<Stock>(res);
+      },
+      error: (e) => {
+        this.snackBar.open("Error while fetching stocks", undefined, {duration: 2000});
       },
     });
   }

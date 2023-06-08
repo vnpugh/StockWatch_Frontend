@@ -1,12 +1,14 @@
 <div class="navbar bg-base-100">
   <img src="assets/StockWatch.png" alt="Logo" class="logo-image" />
   <div class="navbar-nav flex-1">
-    <form class="form-inline d-flex">
+    <form class="form-inline d-flex" (ngSubmit)="searchStocks()">
       <input
         class="form-control mr-sm-2"
         type="search"
         placeholder="Search"
         aria-label="Search"
+        name="search"
+        [(ngModel)]="searchQuery"
       />
       <button class="btn btn-outline-success btn-m my-2 my-sm-0" type="submit">
         Search
@@ -21,7 +23,7 @@
         <details id="details">
           <summary>Watchlists</summary>
           <ul class="bg-base-100 ul" style="z-index: 10;">
-            <li id="li" *ngFor="let wl of watchlists"><a [routerLink]="['watchlist', wl.listId]">{{wl.listName}}</a></li>
+            <li id="li" *ngFor="let wl of watchlists"><a [routerLink]="['watchlist/:watchlistId', {watchlistId: wl.listId, listName: wl.listName}]">{{wl.listName}}</a></li>
           </ul>
         </details>
       </li>

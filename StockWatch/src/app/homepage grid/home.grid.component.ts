@@ -8,6 +8,8 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateWatchlistComponent } from '../dialog/create-watchlist/create-watchlist.component';
 import { AddtoWatchlistComponent } from '../dialog/addto-watchlist/addto-watchlist.component';
+import { HomepageService } from '../homepage/homepage.service';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-homegrid',
@@ -19,10 +21,13 @@ export class HomeGridComponent {
   dataSource:any;
   selection = new SelectionModel<Stock>(true, []);
 
-  constructor(private route: ActivatedRoute, private httpClient: HttpService, private dialog: MatDialog, private snackBar: MatSnackBar,private ref: ChangeDetectorRef, private r : Router) {
+  constructor(private route: ActivatedRoute, private httpClient: HttpService, private dialog: MatDialog, private snackBar: MatSnackBar, private homePageService: HomepageService) {
     this.route.params.subscribe(params => {
       this.populateGrid();
     });
+    this.homePageService.subject.subscribe(query=> {
+      this.searchStocks(query);
+    })
   }
 
   ngOnInit() {
@@ -98,6 +103,17 @@ export class HomeGridComponent {
       } else if (result) {
         this.snackBar.open(result, undefined, {duration: 2000});
       }
+    });
+  }
+
+  searchStocks(query: string) {
+    this.httpClient.get('api/stocks/companyOrSymbol', {query: query}).subscribe({
+      next: (res: Stock[]) => {
+        this.dataSource = new MatTableDataSource<Stock>(res);
+      },
+      error: (e) => {
+        this.snackBar.open("Error while fetching stocks", undefined, {duration: 2000});
+      },
     });
   }
 }
