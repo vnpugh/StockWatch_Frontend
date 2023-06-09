@@ -29,7 +29,7 @@ To run the StockWatch application, follow these steps:
 <p>In developing StockWatch, my strategic approach involved prioritizing the backend implementation to ensure the core functionality of the application was effectively implemented as a minimum viable product. Once the backend functionality was established, I dedicated my attention to refining and enhancing the frontend user interface.</p>
 
 <p>After selecting a project topic, I began to create the wireframes for the login, registration, and home page:</p>
-<center><img align="center" width="300" height="300" src="assets/login_wireframe.png" alt=""></center>
+<center><img align="center" width="300" height="300" src="../assets/login_wireframe.png" alt=""></center>
 <center><img align="center" width="500" height="400" src="assets/registration_wireframe.png" alt=""></center>
 <center><img align="center" width="500" height="400" src="assets/home_wireframe.png" alt=""></center>
 
