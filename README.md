@@ -25,7 +25,7 @@ To run the StockWatch application, follow these steps:
 <li>Diagrams.net</li>
 </ul>
 
-<h2>Frontend Project Approach</h2>
+<h2>Frontend Project Approach:desktop_computer:</h2>
 <p>In developing StockWatch, my strategic approach involved prioritizing the backend implementation to ensure the core functionality of the application was effectively implemented as a minimum viable product. Once the backend functionality was established, I dedicated my attention to refining and enhancing the frontend user interface.</p>
 
 <p>After selecting a project topic, I began to create the wireframes for the login, registration, and home page:</p>
@@ -39,14 +39,14 @@ To run the StockWatch application, follow these steps:
 <p>To optimize development time and maintain a consistent and professional design, I leveraged popular frontend frameworks such as Bootstrap, Daisy UI, and Angular Material. These frameworks provided a solid foundation for creating visually appealing and responsive components, including forms, tables, buttons, and the navigation bar.
 Please take a look at my Github Projects Board <a href="https://github.com/users/vnpugh/projects/5/views/1?layout=board">HERE.</a></p>
 
-<h2>What I learned/Wins</h2>
+<h2>What I learned/Wins:brain:</h2>
 <p>When it came to styling, I embraced the opportunity to enhance the user experience by leveraging Angular Material. By incorporating Angular Material's comprehensive suite of pre-designed components, I was able to effortlessly add visually appealing forms, buttons, and tables/grids to the project pages. The extensive collection of Material design components provided me with the tools needed to create custom components with consistent and intuitive interaction patterns. This allowed me to elevate the aesthetics and functionality of the application, ensuring a seamless and engaging user interface.
   </p>
 
 <center><img align="center" width="600" height="500" src="StockWatch/assets/learn.png" alt=""></center>
 
 
-<h2>Discover the Powerful Features of StockWatch (Login/Register)</h2>
+<h2>Discover the Powerful Features of StockWatch (Login/Register):chart:</h2>
 <ul>
 <li>Simplify Your Stock Tracking: Register for an account and create a custom watchlist, enabling you to effortlessly organize and monitor your favorite stocks.</li>
 <li>Secure and Personalized Access: Log in to your account securely to gain personalized access to your watchlist, ensuring a tailored stock tracking experience.</li>
@@ -57,7 +57,7 @@ Please take a look at my Github Projects Board <a href="https://github.com/users
 </ul>
 Experience StockWatch today and unlock the power to track stocks with precision and convenience.
 
-<h2>Final UI</h2>
+<h2>Final UI (Login & Register Pages)</h2>
 <center><img align="center" width="400" height="500" src="StockWatch/assets/login_final.png" alt=""></center>
 <center><img align="center" width="400" height="500" src="StockWatch/assets/registration_final.png" alt=""></center>
 
