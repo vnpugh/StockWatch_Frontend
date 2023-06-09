@@ -22,6 +22,7 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angula
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { LearnComponent } from './learn/learn.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
     RegistrationComponent,
     HomeGridComponent,
     CreateWatchlistComponent,
-    AddtoWatchlistComponent
+    AddtoWatchlistComponent,
+    LearnComponent
   ],
   imports: [
     RoutingModule,
