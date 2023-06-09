@@ -1,0 +1,20 @@
+
+<h1 class="terms">Key Stock Trading Terms and Definitions For Beginners</h1>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="Term">
+      <mat-header-cell *matHeaderCellDef> Term </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.Term }} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Definition">
+      <mat-header-cell *matHeaderCellDef> Definition </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.Definition }} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row matRipple *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+<button (click)="navigateToLearnPage()"></button>
+

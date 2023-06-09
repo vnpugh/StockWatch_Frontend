@@ -1,0 +1,55 @@
+<h2>{{listName}}</h2>
+<button mat-flat-button [disabled]="!selection.hasValue()" color="primary" class="btn-mat" (click)="deleteStocks()">Delete Stocks</button>
+<table mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                    [aria-label]="checkboxLabel(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+    <!-- Watchlist Company Column -->
+  <ng-container matColumnDef="company">
+    <th mat-header-cell *matHeaderCellDef> Company </th>
+    <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+  </ng-container>
+
+     <!-- Watchlist Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+
+     <!-- Watchlist Price Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+  </ng-container>
+
+     <!-- Watchlist Stock Change Column -->
+  <ng-container matColumnDef="stockChange">
+    <th mat-header-cell *matHeaderCellDef> Stock Change </th>
+    <td mat-cell *matCellDef="let element"> {{element.stockChange}} </td>
+  </ng-container>
+
+     <!-- Watchlist Wall Street Rating Column -->
+  <ng-container matColumnDef="wallStreetRating">
+    <th mat-header-cell *matHeaderCellDef> Wall Street Rating </th>
+    <td mat-cell *matCellDef="let element"> {{element.wallStreetRating}} </td>
+  </ng-container>
+
+     <!-- Watchlist Market Cap Column -->
+  <ng-container matColumnDef="marketCap">
+    <th mat-header-cell *matHeaderCellDef> Market Cap </th>
+    <td mat-cell *matCellDef="let element"> {{element.marketCap}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+

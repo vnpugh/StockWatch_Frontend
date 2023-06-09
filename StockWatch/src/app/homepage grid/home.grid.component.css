@@ -1,0 +1,9 @@
+/* styling for the table */
+table {
+  width: 100%;
+}
+
+.btn-mat {
+  float: right;
+  margin-right: 10px
+}

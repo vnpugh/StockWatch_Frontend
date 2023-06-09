@@ -1,0 +1,115 @@
+.login-form {
+    max-width: 300px;
+    margin: auto auto;
+    padding: 45px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+  }
+
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #000000;
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: green;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .button-container button {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+
+
+  .password-reset {
+    margin-top: 10px;
+  }
+  .reset {
+    margin-top: 20px;
+   text-align: center;
+   font-size: 10px;
+   color: #007bff;
+   
+  }
+  .reset:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color:green;
+  }
+
+  .backgroud-img {
+    background-image: url(../../assets/login_register.png);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
