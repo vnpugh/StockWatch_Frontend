@@ -64,6 +64,18 @@
   .password-reset {
     margin-top: 10px;
   }
+  .reset {
+    margin-top: 20px;
+   text-align: center;
+   font-size: 10px;
+   color: #007bff;
+   
+  }
+  .reset:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color:green;
+  }
 
   .backgroud-img {
     background-image: url(../../assets/login_register.png);
@@ -73,7 +85,6 @@
     background-size: cover;
     display: flex;
   }
-
 
 
 
